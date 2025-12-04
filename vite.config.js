@@ -5,6 +5,11 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      input: {
+        main: './index.html'
+      }
+    }
   },
   server: {
     port: 3000,
@@ -13,5 +18,6 @@ export default defineConfig({
   preview: {
     port: 3000,
     historyApiFallback: true,
-  }
+  },
+  publicDir: 'public'
 })
