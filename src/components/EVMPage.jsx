@@ -39,7 +39,7 @@ const EVMPage = () => {
   };
 
   const playBeepSound = () => {
-    // Play custom beep sound file
+    // Play custom beep sound from external URL or local file
     try {
       const audio = new Audio('/sounds/beep.mp3');
       audio.volume = 0.5; // Adjust volume as needed
