@@ -301,127 +301,125 @@ const EVMPage = () => {
             </div>
           </div>
 
-          {/* Candidate Table with Proper Borders */}
-          <div style={{
-            border: '2px solid #D1D5DB',
-            borderRadius: '8px',
+          {/* Candidate Table - Clean Table Design */}
+          <table style={{
+            width: '100%',
+            border: '4px solid #D1D5DB',
+            borderCollapse: 'collapse',
+            borderRadius: '12px',
             overflow: 'hidden',
             backgroundColor: 'white'
           }}>
-            {locationData.candidates.map((candidate, index) => (
-              <div key={candidate.id} style={{
-                display: 'grid',
-                gridTemplateColumns: '50px 1fr 40px 80px',
-                alignItems: 'center',
-                padding: window.innerWidth <= 480 ? '8px' : '12px',
-                borderBottom: index < locationData.candidates.length - 1 ? '1px solid #E5E7EB' : 'none',
-                backgroundColor: 'white',
-                minHeight: window.innerWidth <= 480 ? '50px' : '55px',
-                gap: window.innerWidth <= 480 ? '8px' : '12px'
-              }}>
-                {/* Row Number with Border */}
-                <div style={{
-                  fontSize: window.innerWidth <= 480 ? '14px' : '16px',
-                  color: '#1E40AF',
-                  fontWeight: 'bold',
-                  textAlign: 'center',
-                  borderRight: '1px solid #E5E7EB',
-                  paddingRight: '8px',
-                  height: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
+            <tbody>
+              {locationData.candidates.map((candidate, index) => (
+                <tr key={candidate.id} style={{
+                  borderBottom: index < locationData.candidates.length - 1 ? '6px solid #E5E7EB' : 'none'
                 }}>
-                  {candidate.id}
-                </div>
-
-                {/* Candidate Name and Symbol Combined with Border */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  paddingLeft: window.innerWidth <= 480 ? '8px' : '12px',
-                  paddingRight: window.innerWidth <= 480 ? '8px' : '12px',
-                  borderRight: '1px solid #E5E7EB',
-                  height: '100%',
-                  minWidth: 0 // Allow flex item to shrink
-                }}>
-                  <div style={{
-                    fontSize: window.innerWidth <= 480 ? '14px' : '16px',
-                    color: '#333',
-                    fontWeight: candidate.name ? 'bold' : 'normal',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    flex: 1,
-                    marginRight: candidate.symbol ? '8px' : '0'
+                  {/* Row Number */}
+                  <td style={{
+                    width: window.innerWidth <= 480 ? '50px' : '60px',
+                    padding: window.innerWidth <= 480 ? '12px 8px' : '16px 12px',
+                    borderRight: '6px solid #E5E7EB',
+                    textAlign: 'center',
+                    verticalAlign: 'middle',
+                    fontSize: window.innerWidth <= 480 ? '16px' : '18px',
+                    color: '#374151',
+                    fontWeight: 'bold'
                   }}>
-                    {candidate.name}
-                  </div>
-                  <div style={{
-                    fontSize: window.innerWidth <= 480 ? '18px' : '22px',
-                    flexShrink: 0
+                    {candidate.id}
+                  </td>
+
+                  {/* Candidate Name and Symbol */}
+                  <td style={{
+                    padding: window.innerWidth <= 480 ? '12px' : '16px',
+                    borderRight: '6px solid #E5E7EB',
+                    verticalAlign: 'middle'
                   }}>
-                    {candidate.symbol}
-                  </div>
-                </div>
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      width: '100%'
+                    }}>
+                      <div style={{
+                        fontSize: window.innerWidth <= 480 ? '16px' : '18px',
+                        color: '#111827',
+                        fontWeight: candidate.name ? '600' : 'normal',
+                        flex: 1,
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        whiteSpace: 'nowrap'
+                      }}>
+                        {candidate.name}
+                      </div>
+                      <div style={{
+                        fontSize: window.innerWidth <= 480 ? '20px' : '24px',
+                        marginLeft: '8px',
+                        flexShrink: 0
+                      }}>
+                        {candidate.symbol}
+                      </div>
+                    </div>
+                  </td>
 
-                {/* Red Bulb with Border */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  borderRight: '1px solid #E5E7EB',
-                  paddingRight: '8px',
-                  height: '100%'
-                }}>
-                  <div style={{
-                    width: window.innerWidth <= 480 ? '16px' : '20px',
-                    height: window.innerWidth <= 480 ? '16px' : '20px',
-                    backgroundColor: glowingBulb === candidate.id ? '#FF0000' : '#8B5A2B',
-                    borderRadius: '50%',
-                    boxShadow: glowingBulb === candidate.id ? '0 0 15px #FF0000, 0 0 30px #FF0000' : 'none',
-                    transition: 'all 0.3s ease'
-                  }}></div>
-                </div>
+                  {/* Red Bulb and Vote Button in Same Column */}
+                  <td style={{
+                    width: window.innerWidth <= 480 ? '90px' : '100px',
+                    padding: window.innerWidth <= 480 ? '12px' : '16px',
+                    textAlign: 'center',
+                    verticalAlign: 'middle'
+                  }}>
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: window.innerWidth <= 480 ? '8px' : '12px'
+                    }}>
+                      {/* Red Bulb */}
+                      <div style={{
+                        width: window.innerWidth <= 480 ? '16px' : '20px',
+                        height: window.innerWidth <= 480 ? '16px' : '20px',
+                        backgroundColor: glowingBulb === candidate.id ? '#FF0000' : '#8B5A2B',
+                        borderRadius: '50%',
+                        boxShadow: glowingBulb === candidate.id ? '0 0 15px #FF0000, 0 0 30px #FF0000' : 'none',
+                        transition: 'all 0.3s ease',
+                        flexShrink: 0
+                      }}></div>
 
-                {/* Vote Button */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '100%'
-                }}>
-                  <button
-                    onClick={candidate.name ? () => handleVote(candidate.id) : undefined}
-                    style={{
-                      backgroundColor: '#1E40AF',
-                      border: 'none',
-                      padding: window.innerWidth <= 480 ? '6px 12px' : '8px 16px',
-                      borderRadius: window.innerWidth <= 480 ? '6px' : '8px',
-                      cursor: candidate.name ? 'pointer' : 'default',
-                      minWidth: window.innerWidth <= 480 ? '45px' : '55px',
-                      minHeight: window.innerWidth <= 480 ? '28px' : '32px',
-                      touchAction: 'manipulation',
-                      WebkitTapHighlightColor: 'transparent'
-                    }}
-                    onMouseOver={(e) => {
-                      if (candidate.name) {
-                        e.target.style.backgroundColor = '#1E3A8A';
-                      }
-                    }}
-                    onMouseOut={(e) => {
-                      if (candidate.name) {
-                        e.target.style.backgroundColor = '#1E40AF';
-                      }
-                    }}
-                  >
-                    {/* Empty button - no text */}
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+                      {/* Vote Button */}
+                      <button
+                        onClick={candidate.name ? () => handleVote(candidate.id) : undefined}
+                        style={{
+                          backgroundColor: '#1E40AF',
+                          border: 'none',
+                          padding: window.innerWidth <= 480 ? '8px 12px' : '10px 16px',
+                          borderRadius: window.innerWidth <= 480 ? '6px' : '8px',
+                          cursor: candidate.name ? 'pointer' : 'default',
+                          minWidth: window.innerWidth <= 480 ? '45px' : '55px',
+                          minHeight: window.innerWidth <= 480 ? '30px' : '35px',
+                          touchAction: 'manipulation',
+                          WebkitTapHighlightColor: 'transparent',
+                          flexShrink: 0
+                        }}
+                        onMouseOver={(e) => {
+                          if (candidate.name) {
+                            e.target.style.backgroundColor = '#1E3A8A';
+                          }
+                        }}
+                        onMouseOut={(e) => {
+                          if (candidate.name) {
+                            e.target.style.backgroundColor = '#1E40AF';
+                          }
+                        }}
+                      >
+                        {/* Empty button - no text */}
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         {/* Share Button - Mobile Responsive */}
