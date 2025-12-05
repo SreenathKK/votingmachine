@@ -363,21 +363,31 @@ const EVMPage = () => {
 
                 {/* Vote Button (No text, just blue background) - Mobile Responsive */}
                 <button
-                  onClick={() => handleVote(candidate.id)}
+                  onClick={candidate.name ? () => handleVote(candidate.id) : undefined}
+                  disabled={!candidate.name}
                   style={{
-                    backgroundColor: '#1E40AF',
+                    backgroundColor: candidate.name ? '#1E40AF' : '#9CA3AF',
                     border: 'none',
                     padding: window.innerWidth <= 480 ? '6px 15px' : '8px 20px',
                     borderRadius: window.innerWidth <= 480 ? '6px' : '8px',
-                    cursor: 'pointer',
+                    cursor: candidate.name ? 'pointer' : 'not-allowed',
                     minWidth: window.innerWidth <= 480 ? '50px' : '60px',
                     minHeight: window.innerWidth <= 480 ? '28px' : '32px',
                     touchAction: 'manipulation',
                     WebkitTapHighlightColor: 'transparent',
-                    flexShrink: 0
+                    flexShrink: 0,
+                    opacity: candidate.name ? 1 : 0.5
                   }}
-                  onMouseOver={(e) => e.target.style.backgroundColor = '#1E3A8A'}
-                  onMouseOut={(e) => e.target.style.backgroundColor = '#1E40AF'}
+                  onMouseOver={(e) => {
+                    if (candidate.name) {
+                      e.target.style.backgroundColor = '#1E3A8A';
+                    }
+                  }}
+                  onMouseOut={(e) => {
+                    if (candidate.name) {
+                      e.target.style.backgroundColor = '#1E40AF';
+                    }
+                  }}
                 >
                   {/* Empty button - no text */}
                 </button>
