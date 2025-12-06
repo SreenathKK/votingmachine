@@ -6,7 +6,7 @@ export const evmData = {
       blockCode: "Kanhangad-05",
       panchayats: [
         {
-          id: 1,
+          id: 1421,
           name: "കല്ല്യാശ്ശേരി പഞ്ചായത്ത്",
           wards: [
             {
@@ -40,6 +40,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ പ്രീത",
+                name: "കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത്-ഇരിണാവ് ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -66,6 +67,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -121,6 +123,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ പ്രീത",
+                name: "കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത്-ഇരിണാവ് ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -147,6 +150,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -207,6 +211,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ പ്രീത",
+                name: "കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത്-ഇരിണാവ് ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -233,6 +238,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -288,6 +294,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ പ്രീത",
+                name: "കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത്-ഇരിണാവ് ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -314,6 +321,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -369,6 +377,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ പ്രീത",
+                name: "കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത്-ഇരിണാവ് ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -395,6 +404,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -450,6 +460,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ.സി. രേണുക",
+                name:"കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത് - കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -476,6 +487,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -536,6 +548,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ.സി. രേണുക",
+                name:"കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത് - കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -562,6 +575,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -618,6 +632,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ.സി. രേണുക",
+                name:"കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത് - കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -644,6 +659,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -704,6 +720,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ.സി. രേണുക",
+                name:"കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത് - കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -730,6 +747,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -785,6 +803,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ.സി. രേണുക",
+                name:"കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത് - കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -811,6 +830,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -866,6 +886,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ.സി. രേണുക",
+                name:"കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത് - കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -877,7 +898,7 @@ export const evmData = {
                     name: "കെ.സി. രേണുക",
                     symbol: "cpim.jpeg",
                     successSymbol: "cpim-success.png",
-                    candidateImgName: "preetha.jpeg",
+                    candidateImgName: "renukha.jpeg",
                   },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
@@ -892,6 +913,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -951,6 +973,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ.സി. രേണുക",
+                name:"കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത് - കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -962,7 +985,7 @@ export const evmData = {
                     name: "കെ.സി. രേണുക",
                     symbol: "cpim.jpeg",
                     successSymbol: "cpim-success.png",
-                    candidateImgName: "preetha.jpeg",
+                    candidateImgName: "renukha.jpeg",
                   },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
@@ -977,6 +1000,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -1032,6 +1056,7 @@ export const evmData = {
               Block: {
                 level: "Block",
                 title: "Vote For കെ.സി. രേണുക",
+                name:"കല്ല്യാശ്ശേരി ബ്ലോക്ക് പഞ്ചായത്ത് - കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   {
                     id: 1,
@@ -1043,7 +1068,7 @@ export const evmData = {
                     name: "കെ.സി. രേണുക",
                     symbol: "cpim.jpeg",
                     successSymbol: "cpim-success.png",
-                    candidateImgName: "preetha.jpeg",
+                    candidateImgName: "renukha.jpeg",
                   },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
@@ -1058,6 +1083,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -1137,6 +1163,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -1220,6 +1247,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -1303,6 +1331,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -1386,6 +1415,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -1465,6 +1495,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -1544,6 +1575,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {
@@ -1627,6 +1659,7 @@ export const evmData = {
               District: {
                 level: "District",
                 title: "Vote For വി വി പവിത്രൻ",
+                name: "കണ്ണൂർ ജില്ലാ പഞ്ചായത്ത് കല്ല്യാശ്ശേരി ഡിവിഷൻ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   {

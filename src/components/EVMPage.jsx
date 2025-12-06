@@ -13,6 +13,7 @@ const EVMPage = () => {
   const [currentLocationId, setCurrentLocationId] = useState(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  console.log(panchayatId)
   // Handle window resize for responsiveness
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
