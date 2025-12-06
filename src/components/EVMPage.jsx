@@ -469,7 +469,8 @@ const EVMPage = () => {
               <button
                 onClick={() => handleTabClick("Block")}
                 style={{
-                  backgroundColor: currentLevel === "Block" ? "#D1D5DB" : "#EC4899",
+                  backgroundColor:
+                    currentLevel === "Block" ? "#D1D5DB" : "#EC4899",
                   color: "white",
                   padding: isMobile ? "8px 20px" : "10px 30px",
                   borderRadius: "20px",
