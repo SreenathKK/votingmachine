@@ -13,7 +13,7 @@ const EVMPage = () => {
   const [currentLocationId, setCurrentLocationId] = useState(null);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  console.log(panchayatId)
+  console.log(panchayatId);
   // Handle window resize for responsiveness
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -335,6 +335,17 @@ const EVMPage = () => {
                         data?.ward?.name || ""
                       }`;
                     })()}
+                  </span>
+                )}
+                {currentLevel === "Block" && (
+                  <span
+                    style={{
+                      fontSize: "14px",
+                      color: "#374151",
+                      fontWeight: "500",
+                    }}
+                  >
+                    {locationData?.name || "Block"}
                   </span>
                 )}
               </div>
