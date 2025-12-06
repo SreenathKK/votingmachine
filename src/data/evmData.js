@@ -21,15 +21,15 @@ export const evmData = {
                 candidates: [
                   {
                     id: 1,
-                    name: "എൻ പി എഴിൽ രാജ്",
-                    symbol: "cpim.jpeg",
-                    successSymbol: "cpim-success.png",
-                    candidateImgName: "ezhilraj.jpeg",
+                    name: "",
+                    symbol: "",
                   },
                   {
                     id: 2,
-                    name: "",
-                    symbol: "",
+                    name: "എൻ പി എഴിൽ രാജ് മാഷ്",
+                    symbol: "cpim.jpeg",
+                    successSymbol: "cpim-success.png",
+                    candidateImgName: "ezhilraj.jpeg",
                   },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
@@ -48,13 +48,17 @@ export const evmData = {
                 candidates: [
                   {
                     id: 1,
+                    name: "",
+                    symbol: "",
+                    successSymbol: "",
+                    candidateImgName: "",
+                  },
+                  {
+                    id: 2,
                     name: "എ വി സത്യൻ",
                     symbol: "cpim.jpeg",
                     successSymbol: "cpim-success.png",
                     candidateImgName: "satyan.jpeg",
-                  },
-                  {
-                    id: 2,
                   },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
