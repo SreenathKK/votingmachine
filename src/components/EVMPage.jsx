@@ -573,7 +573,7 @@ const EVMPage = () => {
             }}
           >
             <tbody>
-              {locationData.candidates.map((candidate, index) => (
+              {locationData.candidates.slice(0, 8).map((candidate, index) => (
                 <tr
                   key={candidate.id}
                   style={{
@@ -768,7 +768,7 @@ const EVMPage = () => {
         </div>
 
         {/* Share Button - Mobile Responsive */}
-        <div
+        {/* <div
           style={{
             textAlign: "center",
             marginTop: isMobile ? "15px" : "20px",
@@ -794,7 +794,7 @@ const EVMPage = () => {
           >
             Share Demo Voting Machine
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
