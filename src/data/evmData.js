@@ -2103,7 +2103,7 @@ export const evmData = {
               },
             },
             {
-              wardNo: 12,
+              wardNo: 9,
               name: "ശ്രീകണ്‌ഠപുരം നഗരസഭ",
               ballotUnit: "203",
               blockDivision: "Kanhangad-08",
@@ -2164,7 +2164,7 @@ export const evmData = {
               },
             },
             {
-              wardNo: 9,
+              wardNo: 12,
               name: "ശ്രീകണ്‌ഠപുരം നഗരസഭ",
               ballotUnit: "203",
               blockDivision: "Kanhangad-08",
