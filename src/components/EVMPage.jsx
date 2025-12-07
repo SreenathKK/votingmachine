@@ -110,7 +110,7 @@ const EVMPage = () => {
   const handleShare = async () => {
     const shareData = {
       title: 'Vote For UDF',
-      text: 'വോട്ട് മനുഷ്യന്റെ സ്വപ്നങ്ങളും ഭാവിയും എഴുതുന്ന ഏറ്റവും ചെറിയ രേഖയാണ്. അത് ചെറുതായിരിക്കാം… പക്ഷേ അതിന്റെ ശക്തി ഒരു തലമുറയുടെ ദിശ മാറ്റാൻ കഴിയും.',
+      text: 'Vote for ഗോപാലൻ കുമ്പച്ചിമൂല',
       url: window.location.href
     };
 
@@ -134,7 +134,7 @@ const EVMPage = () => {
 
   const ShareModal = () => {
     const currentUrl = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent('വോട്ട് മനുഷ്യന്റെ സ്വപ്നങ്ങളും ഭാവിയും എഴുതുന്ന ഏറ്റവും ചെറിയ രേഖയാണ്. അത് ചെറുതായിരിക്കാം… പക്ഷേ അതിന്റെ ശക്തി ഒരു തലമുറയുടെ ദിശ മാറ്റാൻ കഴിയും.');
+    const text = encodeURIComponent('Vote for ഗോപാലൻ കുമ്പച്ചിമൂല');
 
     const shareLinks = [
       {
@@ -772,7 +772,7 @@ const EVMPage = () => {
         <title>{selectedCandidate ? `Voted for ${locationData?.candidates.find(c => c.id === selectedCandidate)?.name}` : (locationData?.candidates[0]?.name ? `Vote for ${locationData.candidates[0].name}` : 'EVM Voting Machine')}</title>
         <meta property="og:title" content={selectedCandidate ? `Voted for ${locationData?.candidates.find(c => c.id === selectedCandidate)?.name}` : (locationData?.candidates[0]?.name ? `Vote for ${locationData.candidates[0].name}` : 'EVM Voting Machine')} />
         <meta property="og:description" content={`Vote for ${locationData?.candidates[0]?.name || 'Candidate'} in ${locationData?.name || 'Ward'}, ${locationData?.panchayatName || 'Panchayat'}`} />
-        <meta property="og:image" content={selectedCandidate ? `${window.location.origin}${locationData?.candidates.find(c => c.id === selectedCandidate)?.image || locationData?.candidates.find(c => c.id === selectedCandidate)?.symbolImage}` : `${window.location.origin}${locationData?.candidates[0]?.image || locationData?.candidates[0]?.symbolImage || '/vite.svg'}`} />
+        <meta property="og:image" content={selectedCandidate ? `${window.location.origin}${locationData?.candidates.find(c => c.id === selectedCandidate)?.image || locationData?.candidates.find(c => c.id === selectedCandidate)?.symbolImage}` : `${window.location.origin}${locationData?.candidates[0]?.image || locationData?.candidates[0]?.symbolImage || '/candidates/gopalan.jpg'}`} />
       </Helmet>
 
       {/* Watermark */}
