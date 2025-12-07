@@ -860,19 +860,19 @@ export const getWardData = (panchayatId, wardNo) => {
 export const getLevelTheme = (level) => {
   const themes = {
     Ward: {
-      tabColor: '#9CA3AF',
-      containerColor: '#F3F4F6',
-      borderColor: '#D1D5DB'
+      tabColor: '#FF9933', // Saffron
+      containerColor: '#FFF7ED', // Very light orange
+      borderColor: '#FDBA74' // Light orange border
     },
     Block: {
-      tabColor: '#EC4899',
-      containerColor: '#FCE7F3',
-      borderColor: '#F9A8D4'
+      tabColor: '#F3F4F6', // Light Gray (White-ish)
+      containerColor: '#FFFFFF', // White
+      borderColor: '#E5E7EB' // Gray border
     },
     District: {
-      tabColor: '#0891B2',
-      containerColor: '#E0F2FE',
-      borderColor: '#7DD3FC'
+      tabColor: '#138808', // Green
+      containerColor: '#F0FDF4', // Very light green
+      borderColor: '#86EFAC' // Light green border
     }
   };
   return themes[level] || themes.Ward;

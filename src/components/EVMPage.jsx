@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getWardData, getLevelTheme } from '../data/evmData';
 import { Share2, X, Copy, Check, Facebook, Twitter, Send, MessageCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet-async';
 
 const EVMPage = () => {
   const { panchayatId, wardParam } = useParams();
@@ -506,8 +507,8 @@ const EVMPage = () => {
           <button
             onClick={() => handleTabClick('Ward')}
             style={{
-              backgroundColor: currentLevel === 'Ward' ? '#9CA3AF' : '#D1D5DB',
-              color: 'white',
+              backgroundColor: currentLevel === 'Ward' ? '#FF9933' : '#FFCC80', // Saffron Active / Light Saffron Inactive
+              color: currentLevel === 'Ward' ? 'white' : '#333', // White text for active, Dark for inactive light color
               padding: window.innerWidth <= 480 ? '8px 20px' : '10px 30px',
               borderRadius: '20px',
               fontSize: window.innerWidth <= 480 ? '12px' : '14px',
@@ -524,13 +525,13 @@ const EVMPage = () => {
           <button
             onClick={() => handleTabClick('Block')}
             style={{
-              backgroundColor: currentLevel === 'Block' ? '#EC4899' : '#D1D5DB',
-              color: 'white',
+              backgroundColor: currentLevel === 'Block' ? '#F3F4F6' : '#E5E7EB', // White/Gray Active / Darker Gray Inactive
+              color: '#333', // Always dark text for Block
               padding: window.innerWidth <= 480 ? '8px 20px' : '10px 30px',
               borderRadius: '20px',
               fontSize: window.innerWidth <= 480 ? '12px' : '14px',
               fontWeight: 'bold',
-              border: 'none',
+              border: currentLevel === 'Block' ? '1px solid #D1D5DB' : '1px solid transparent',
               cursor: 'pointer',
               minWidth: window.innerWidth <= 480 ? '70px' : '80px',
               touchAction: 'manipulation',
@@ -542,8 +543,8 @@ const EVMPage = () => {
           <button
             onClick={() => handleTabClick('District')}
             style={{
-              backgroundColor: currentLevel === 'District' ? '#0891B2' : '#D1D5DB',
-              color: 'white',
+              backgroundColor: currentLevel === 'District' ? '#138808' : '#86EFAC', // Green Active / Light Green Inactive
+              color: currentLevel === 'District' ? 'white' : '#064E3B', // White text for active, Dark Green for inactive
               padding: window.innerWidth <= 480 ? '8px 20px' : '10px 30px',
               borderRadius: '20px',
               fontSize: window.innerWidth <= 480 ? '12px' : '14px',
@@ -766,6 +767,28 @@ const EVMPage = () => {
       </div>
 
       {showShareModal && <ShareModal />}
+      {/* Dynamic Meta Tags */}
+      <Helmet>
+        <title>{selectedCandidate ? `Voted for ${locationData?.candidates.find(c => c.id === selectedCandidate)?.name}` : (locationData?.candidates[0]?.name ? `Vote for ${locationData.candidates[0].name}` : 'EVM Voting Machine')}</title>
+        <meta property="og:title" content={selectedCandidate ? `Voted for ${locationData?.candidates.find(c => c.id === selectedCandidate)?.name}` : (locationData?.candidates[0]?.name ? `Vote for ${locationData.candidates[0].name}` : 'EVM Voting Machine')} />
+        <meta property="og:description" content={`Vote for ${locationData?.candidates[0]?.name || 'Candidate'} in ${locationData?.name || 'Ward'}, ${locationData?.panchayatName || 'Panchayat'}`} />
+        <meta property="og:image" content={selectedCandidate ? (locationData?.candidates.find(c => c.id === selectedCandidate)?.image || locationData?.candidates.find(c => c.id === selectedCandidate)?.symbolImage) : (locationData?.candidates[0]?.image || locationData?.candidates[0]?.symbolImage || '/vite.svg')} />
+      </Helmet>
+
+      {/* Watermark */}
+      <div style={{
+        position: 'fixed',
+        bottom: '10px',
+        right: '10px',
+        opacity: 0.1,
+        pointerEvents: 'none',
+        fontSize: '0.6rem',
+        color: '#000',
+        zIndex: 9999,
+        fontFamily: 'Arial, sans-serif'
+      }}>
+        Sreenath
+      </div>
     </div>
   );
 };
