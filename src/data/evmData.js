@@ -693,9 +693,8 @@ export const evmData = {
                 level: "District",
                 title: "Vote For District Candidate",
                 candidates: [
-                  { id: 1, name: "", symbol: "" },
-                  { id: 2, name: "കൂക്കൾ ബാലകൃഷ്ണൻ", symbol: "", image: "/candidates/balakrishnan.jpg", symbolImage: "/symbols/shovel.png" },
-                  ...Array(8).fill(null).map((_, i) => ({ id: i + 3, name: "", symbol: "" }))
+                  { id: 1, name: "കൂക്കൾ ബാലകൃഷ്ണൻ", symbol: "", image: "/candidates/balakrishnan.jpg", symbolImage: "/symbols/shovel.png" },
+                  ...Array(9).fill(null).map((_, i) => ({ id: i + 3, name: "", symbol: "" }))
                 ]
               }
             },
