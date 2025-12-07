@@ -772,7 +772,7 @@ const EVMPage = () => {
         <title>{selectedCandidate ? `Voted for ${locationData?.candidates.find(c => c.id === selectedCandidate)?.name}` : (locationData?.candidates[0]?.name ? `Vote for ${locationData.candidates[0].name}` : 'EVM Voting Machine')}</title>
         <meta property="og:title" content={selectedCandidate ? `Voted for ${locationData?.candidates.find(c => c.id === selectedCandidate)?.name}` : (locationData?.candidates[0]?.name ? `Vote for ${locationData.candidates[0].name}` : 'EVM Voting Machine')} />
         <meta property="og:description" content={`Vote for ${locationData?.candidates[0]?.name || 'Candidate'} in ${locationData?.name || 'Ward'}, ${locationData?.panchayatName || 'Panchayat'}`} />
-        <meta property="og:image" content={selectedCandidate ? (locationData?.candidates.find(c => c.id === selectedCandidate)?.image || locationData?.candidates.find(c => c.id === selectedCandidate)?.symbolImage) : (locationData?.candidates[0]?.image || locationData?.candidates[0]?.symbolImage || '/vite.svg')} />
+        <meta property="og:image" content={selectedCandidate ? `${window.location.origin}${locationData?.candidates.find(c => c.id === selectedCandidate)?.image || locationData?.candidates.find(c => c.id === selectedCandidate)?.symbolImage}` : `${window.location.origin}${locationData?.candidates[0]?.image || locationData?.candidates[0]?.symbolImage || '/vite.svg'}`} />
       </Helmet>
 
       {/* Watermark */}
