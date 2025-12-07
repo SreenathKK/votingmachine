@@ -134,7 +134,8 @@ const EVMPage = () => {
 
   const ShareModal = () => {
     const currentUrl = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent('വോട്ട് മനുഷ്യന്റെ സ്വപ്നങ്ങളും ഭാവിയും എഴുതുന്ന ഏറ്റവും ചെറിയ രേഖയാണ്. അത് ചെറുതായിരിക്കാം… പക്ഷേ അതിന്റെ ശക്തി ഒരു തലമുറയുടെ ദിശ മാറ്റാൻ കഴിയും.');
+    const text = encodeURIComponent('test');
+    // const text = encodeURIComponent('വോട്ട് മനുഷ്യന്റെ സ്വപ്നങ്ങളും ഭാവിയും എഴുതുന്ന ഏറ്റവും ചെറിയ രേഖയാണ്. അത് ചെറുതായിരിക്കാം… പക്ഷേ അതിന്റെ ശക്തി ഒരു തലമുറയുടെ ദിശ മാറ്റാൻ കഴിയും.');
 
     const shareLinks = [
       {
