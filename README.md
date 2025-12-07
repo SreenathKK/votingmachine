@@ -1,6 +1,7 @@
 # EVM Voting System
 
 A modern Electronic Voting Machine (EVM) demo system built with React.js. This system allows you to create voting interfaces for different constituencies with URL-based routing and real-time vote counting.
+2
 
 ## Features
 
