@@ -8,7 +8,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<EVMPage />} />
-          <Route path="/vote/:panchayatId/:wardNo" element={<EVMPage />} />
+          <Route path="/vote/:panchayatId/:wardParam" element={<EVMPage />} />
           <Route path="*" element={
             <div style={{ 
               minHeight: '100vh', 

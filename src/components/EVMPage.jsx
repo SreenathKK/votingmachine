@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getWardData, getLevelTheme } from '../data/evmData';
+import { Share2, X, Copy, Check, Facebook, Twitter, Send, MessageCircle } from 'lucide-react';
 
 const EVMPage = () => {
-  const { panchayatId, wardNo } = useParams();
+  const { panchayatId, wardParam } = useParams();
+  
+  // Parse ward number from parameter (handles "ward=9" or just "9")
+  const wardNo = wardParam ? (wardParam.startsWith('ward=') ? wardParam.split('=')[1] : wardParam) : '1';
+
   const [currentLevel, setCurrentLevel] = useState('Ward');
   const [locationData, setLocationData] = useState(null);
   const [theme, setTheme] = useState(null);
@@ -11,6 +16,8 @@ const EVMPage = () => {
   const [glowingBulb, setGlowingBulb] = useState(null);
   const [showSuccess, setShowSuccess] = useState(false);
   const [currentLocationId, setCurrentLocationId] = useState(null);
+  const [showShareModal, setShowShareModal] = useState(false);
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const pId = panchayatId || '1';
@@ -99,6 +106,186 @@ const EVMPage = () => {
     setGlowingBulb(null);
   };
 
+  const handleShare = async () => {
+    const shareData = {
+      title: 'EVM Voting System',
+      text: 'Check out this EVM Voting System Demo!',
+      url: window.location.href
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        console.log('Error sharing:', err);
+        setShowShareModal(true);
+      }
+    } else {
+      setShowShareModal(true);
+    }
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const ShareModal = () => {
+    const currentUrl = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent('Check out this EVM Voting System Demo!');
+
+    const shareLinks = [
+      {
+        name: 'WhatsApp',
+        icon: <MessageCircle size={24} />,
+        url: `https://wa.me/?text=${text}%20${currentUrl}`,
+        color: '#25D366'
+      },
+      {
+        name: 'Facebook',
+        icon: <Facebook size={24} />,
+        url: `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`,
+        color: '#1877F2'
+      },
+      {
+        name: 'Twitter',
+        icon: <Twitter size={24} />,
+        url: `https://twitter.com/intent/tweet?text=${text}&url=${currentUrl}`,
+        color: '#1DA1F2'
+      },
+      {
+        name: 'Telegram',
+        icon: <Send size={24} />,
+        url: `https://t.me/share/url?url=${currentUrl}&text=${text}`,
+        color: '#0088cc'
+      }
+    ];
+
+    return (
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 1000,
+        padding: '20px'
+      }} onClick={() => setShowShareModal(false)}>
+        <div style={{
+          backgroundColor: 'white',
+          borderRadius: '20px',
+          padding: '25px',
+          width: '100%',
+          maxWidth: '400px',
+          position: 'relative'
+        }} onClick={e => e.stopPropagation()}>
+          <button 
+            onClick={() => setShowShareModal(false)}
+            style={{
+              position: 'absolute',
+              right: '15px',
+              top: '15px',
+              border: 'none',
+              background: 'none',
+              cursor: 'pointer',
+              color: '#666'
+            }}
+          >
+            <X size={24} />
+          </button>
+
+          <h3 style={{ marginTop: 0, marginBottom: '20px', fontSize: '1.25rem', fontWeight: 'bold' }}>
+            Share via
+          </h3>
+
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(4, 1fr)', 
+            gap: '15px',
+            marginBottom: '25px'
+          }}>
+            {shareLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  textDecoration: 'none',
+                  color: '#333',
+                  gap: '8px'
+                }}
+              >
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  borderRadius: '50%',
+                  backgroundColor: link.color,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'white'
+                }}>
+                  {link.icon}
+                </div>
+                <span style={{ fontSize: '12px' }}>{link.name}</span>
+              </a>
+            ))}
+          </div>
+
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            padding: '10px',
+            backgroundColor: '#f3f4f6',
+            borderRadius: '10px',
+            border: '1px solid #e5e7eb'
+          }}>
+            <input 
+              type="text" 
+              value={window.location.href} 
+              readOnly
+              style={{
+                flex: 1,
+                border: 'none',
+                background: 'transparent',
+                outline: 'none',
+                color: '#666',
+                fontSize: '14px'
+              }}
+            />
+            <button
+              onClick={copyToClipboard}
+              style={{
+                border: 'none',
+                background: 'white',
+                padding: '8px',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: copied ? '#10B981' : '#666',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.05)'
+              }}
+            >
+              {copied ? <Check size={20} /> : <Copy size={20} />}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   if (!locationData || !theme) {
     return (
       <div style={{ 
@@ -117,6 +304,8 @@ const EVMPage = () => {
 
   // Success Screen - Mobile Responsive
   if (showSuccess) {
+    const votedCandidate = locationData?.candidates?.find(c => c.id === selectedCandidate);
+
     return (
       <div style={{ 
         minHeight: '100vh', 
@@ -130,52 +319,162 @@ const EVMPage = () => {
         <div style={{
           backgroundColor: 'white',
           borderRadius: window.innerWidth <= 480 ? '15px' : '20px',
-          padding: window.innerWidth <= 480 ? '30px 20px' : '40px',
+          padding: '0', // Removing padding to let the border take over
           textAlign: 'center',
-          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
+          boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
           maxWidth: window.innerWidth <= 480 ? '90%' : '400px',
-          width: '100%'
+          width: '100%',
+          overflow: 'hidden',
+          position: 'relative'
         }}>
-          <div style={{ 
-            fontSize: window.innerWidth <= 480 ? '3rem' : '4rem', 
-            marginBottom: window.innerWidth <= 480 ? '15px' : '20px' 
-          }}>✅</div>
-          <h2 style={{ 
-            color: '#10B981', 
-            fontSize: window.innerWidth <= 480 ? '1.5rem' : '2rem', 
-            marginBottom: window.innerWidth <= 480 ? '10px' : '15px',
-            fontWeight: 'bold'
+          {/* UDF Tricolor Border Effect */}
+          <div style={{
+            background: 'linear-gradient(to right, #FF9933, #FFFFFF, #138808)',
+            padding: '5px',
+            borderRadius: window.innerWidth <= 480 ? '15px' : '20px',
           }}>
-            Voting Successful!
-          </h2>
-          <p style={{ 
-            color: '#666', 
-            fontSize: window.innerWidth <= 480 ? '1rem' : '1.1rem', 
-            marginBottom: window.innerWidth <= 480 ? '25px' : '30px',
-            lineHeight: '1.5'
-          }}>
-            Your vote has been recorded successfully.
-          </p>
-          <button
-            onClick={handleRepeat}
-            style={{
-              backgroundColor: '#059669',
-              color: 'white',
-              border: 'none',
-              padding: window.innerWidth <= 480 ? '12px 25px' : '15px 30px',
-              borderRadius: window.innerWidth <= 480 ? '8px' : '10px',
-              fontSize: window.innerWidth <= 480 ? '14px' : '16px',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              touchAction: 'manipulation',
-              WebkitTapHighlightColor: 'transparent',
-              minWidth: window.innerWidth <= 480 ? '120px' : '140px'
-            }}
-            onMouseOver={(e) => e.target.style.backgroundColor = '#047857'}
-            onMouseOut={(e) => e.target.style.backgroundColor = '#059669'}
-          >
-            Vote Again
-          </button>
+            <div style={{
+              backgroundColor: 'white',
+              borderRadius: window.innerWidth <= 480 ? '12px' : '17px',
+              padding: window.innerWidth <= 480 ? '30px 20px' : '40px',
+            }}>
+              
+              <div style={{ 
+                fontSize: window.innerWidth <= 480 ? '3rem' : '4rem', 
+                marginBottom: '10px' 
+              }}>✅</div>
+              
+              <h2 style={{ 
+                color: '#10B981', 
+                fontSize: window.innerWidth <= 480 ? '1.5rem' : '2rem', 
+                marginBottom: '5px',
+                fontWeight: 'bold'
+              }}>
+                Vote Recorded!
+              </h2>
+
+              {votedCandidate && (
+                <div style={{
+                  margin: '20px 0',
+                  padding: '0',
+                  background: 'linear-gradient(180deg, rgba(255, 153, 51, 0.1) 0%, rgba(255, 255, 255, 1) 45%, rgba(255, 255, 255, 1) 55%, rgba(19, 136, 8, 0.1) 100%)',
+                  borderRadius: '15px',
+                  boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
+                  overflow: 'hidden',
+                  border: '1px solid #f0f0f0'
+                }}>
+                  {/* Tricolor Top Bar */}
+                  <div style={{
+                    height: '8px',
+                    background: 'linear-gradient(to right, #FF9933, #FFFFFF, #138808)'
+                  }}></div>
+
+                  <div style={{ padding: '25px' }}>
+                    <div style={{ 
+                      fontSize: '1.2rem', 
+                      color: '#64748b', 
+                      marginBottom: '10px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '1px',
+                      fontWeight: '600'
+                    }}>
+                      You voted for
+                    </div>
+                    <div style={{ 
+                      fontSize: '2rem', 
+                      fontWeight: '800', 
+                      color: '#1e293b',
+                      marginBottom: '20px'
+                    }}>
+                      {votedCandidate.name}
+                    </div>
+                    
+                    {votedCandidate.image ? (
+                      <div style={{
+                        width: '140px',
+                        height: '140px',
+                        margin: '0 auto 10px',
+                        borderRadius: '50%',
+                        overflow: 'hidden',
+                        border: '4px solid white',
+                        boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                      }}>
+                        <img 
+                          src={votedCandidate.image} 
+                          alt={votedCandidate.name}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                          }}
+                        />
+                      </div>
+                    ) : (
+                      <div style={{ 
+                        marginBottom: '10px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                      }}>
+                        {votedCandidate.symbolImage ? (
+                          <img 
+                            src={votedCandidate.symbolImage} 
+                            alt="symbol" 
+                            style={{
+                              width: '100px',
+                              height: '100px',
+                              objectFit: 'contain',
+                              filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))'
+                            }} 
+                          />
+                        ) : (
+                          <div style={{ 
+                            fontSize: '5rem',
+                            lineHeight: '1',
+                            filter: 'drop-shadow(0 4px 6px rgba(0,0,0,0.1))'
+                          }}>
+                            {votedCandidate.symbol}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              <p style={{ 
+                color: '#475569', 
+                fontSize: window.innerWidth <= 480 ? '1rem' : '1.1rem', 
+                marginBottom: '25px',
+                lineHeight: '1.6',
+                fontStyle: 'italic'
+              }}>
+                "Thank you for strengthening democracy! Your vote has been successfully cast."
+              </p>
+
+              <button
+                onClick={handleRepeat}
+                style={{
+                  background: 'linear-gradient(to right, #FF9933, #138808)', // Tricolor gradient button
+                  color: 'white',
+                  border: 'none',
+                  padding: window.innerWidth <= 480 ? '12px 25px' : '15px 30px',
+                  borderRadius: window.innerWidth <= 480 ? '8px' : '10px',
+                  fontSize: window.innerWidth <= 480 ? '14px' : '16px',
+                  fontWeight: 'bold',
+                  cursor: 'pointer',
+                  touchAction: 'manipulation',
+                  WebkitTapHighlightColor: 'transparent',
+                  minWidth: window.innerWidth <= 480 ? '120px' : '140px',
+                  boxShadow: '0 4px 6px rgba(0,0,0,0.1)'
+                }}
+                onMouseOver={(e) => e.target.style.opacity = '0.9'}
+                onMouseOut={(e) => e.target.style.opacity = '1'}
+              >
+                Vote Again
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -359,7 +658,19 @@ const EVMPage = () => {
                         marginLeft: '8px',
                         flexShrink: 0
                       }}>
-                        {candidate.symbol}
+                        {candidate.symbolImage ? (
+                          <img 
+                            src={candidate.symbolImage} 
+                            alt="symbol" 
+                            style={{
+                              width: window.innerWidth <= 480 ? '30px' : '40px',
+                              height: window.innerWidth <= 480 ? '30px' : '40px',
+                              objectFit: 'contain'
+                            }} 
+                          />
+                        ) : (
+                          candidate.symbol
+                        )}
                       </div>
                     </div>
                   </td>
@@ -426,27 +737,35 @@ const EVMPage = () => {
 
         {/* Share Button - Mobile Responsive */}
         <div style={{ textAlign: 'center', marginTop: window.innerWidth <= 480 ? '15px' : '20px' }}>
-          <button style={{
-            backgroundColor: '#059669',
-            color: 'white',
-            border: 'none',
-            padding: window.innerWidth <= 480 ? '10px 20px' : '12px 30px',
-            borderRadius: window.innerWidth <= 480 ? '15px' : '20px',
-            fontSize: window.innerWidth <= 480 ? '12px' : '14px',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            touchAction: 'manipulation',
-            WebkitTapHighlightColor: 'transparent',
-            maxWidth: '100%',
-            wordWrap: 'break-word'
-          }}
-          onMouseOver={(e) => e.target.style.backgroundColor = '#047857'}
-          onMouseOut={(e) => e.target.style.backgroundColor = '#059669'}
+          <button 
+            onClick={handleShare}
+            style={{
+              backgroundColor: '#059669',
+              color: 'white',
+              border: 'none',
+              padding: window.innerWidth <= 480 ? '10px 20px' : '12px 30px',
+              borderRadius: window.innerWidth <= 480 ? '15px' : '20px',
+              fontSize: window.innerWidth <= 480 ? '12px' : '14px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              touchAction: 'manipulation',
+              WebkitTapHighlightColor: 'transparent',
+              maxWidth: '100%',
+              wordWrap: 'break-word',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+            onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#047857'}
+            onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#059669'}
           >
+            <Share2 size={16} />
             Share Demo Voting Machine
           </button>
         </div>
       </div>
+
+      {showShareModal && <ShareModal />}
     </div>
   );
 };

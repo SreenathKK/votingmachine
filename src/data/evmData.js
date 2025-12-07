@@ -1,3 +1,20 @@
+const getSampleCandidates = () => {
+  const samples = [
+    { name: "Ramesh", symbol: "🚲" },
+    { name: "Suresh", symbol: "🦁" },
+    { name: "Gita", symbol: "🌸" },
+    { name: "Abdul", symbol: "🚗" },
+    { name: "John", symbol: "⏰" }
+  ];
+
+  return Array(10).fill(null).map((_, i) => {
+    // if (i < samples.length) {
+    //   return { id: i + 1, ...samples[i] };
+    // }
+    return { id: i + 1, name: "", symbol: "" };
+  });
+};
+
 export const evmData = {
   district: "Kasaragod",
   blocks: [
@@ -20,7 +37,7 @@ export const evmData = {
                 title: "Vote For രാഹുൽ",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
-                  { id: 2, name: "രാഹുൽ", symbol: "🖐️" },
+                  { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
@@ -35,7 +52,7 @@ export const evmData = {
                 level: "Block",
                 title: "Vote For ഷോജി",
                 candidates: [
-                  { id: 1, name: "ഷോജി", symbol: "🗳️" },
+                  { id: 1, name: "", symbol: "" },
                   { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
@@ -53,7 +70,7 @@ export const evmData = {
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   { id: 2, name: "", symbol: "" },
-                  { id: 3, name: "സുനിൽ", symbol: "⚡" },
+                  { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
@@ -74,7 +91,7 @@ export const evmData = {
                 level: "Ward",
                 title: "Vote For അനിൽ",
                 candidates: [
-                  { id: 1, name: "അനിൽ", symbol: "🌟" },
+                  { id: 1, name: "", symbol: "" },
                   { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
@@ -93,7 +110,7 @@ export const evmData = {
                   { id: 1, name: "", symbol: "" },
                   { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
-                  { id: 4, name: "രവി", symbol: "🏆" },
+                  { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
@@ -110,7 +127,7 @@ export const evmData = {
                   { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
-                  { id: 5, name: "മീര", symbol: "🌺" },
+                  { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
@@ -140,7 +157,7 @@ export const evmData = {
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
-                  { id: 6, name: "പ്രിയ", symbol: "🦋" },
+                  { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
                   { id: 9, name: "", symbol: "" },
@@ -157,7 +174,7 @@ export const evmData = {
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
-                  { id: 7, name: "അജയ്", symbol: "🔥" },
+                  { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
                   { id: 9, name: "", symbol: "" },
                   { id: 10, name: "", symbol: "" }
@@ -174,7 +191,7 @@ export const evmData = {
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
-                  { id: 8, name: "സിന്ധു", symbol: "💎" },
+                  { id: 8, name: "", symbol: "" },
                   { id: 9, name: "", symbol: "" },
                   { id: 10, name: "", symbol: "" }
                 ]
@@ -192,7 +209,7 @@ export const evmData = {
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   { id: 2, name: "", symbol: "" },
-                  { id: 3, name: "രേഖ", symbol: "🌸" },
+                  { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
@@ -207,7 +224,7 @@ export const evmData = {
                 title: "Vote For മനോജ്",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
-                  { id: 2, name: "മനോജ്", symbol: "⭐" },
+                  { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
@@ -225,7 +242,7 @@ export const evmData = {
                   { id: 1, name: "", symbol: "" },
                   { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
-                  { id: 4, name: "ശ്രീജ", symbol: "🎯" },
+                  { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
@@ -249,7 +266,7 @@ export const evmData = {
                   { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
-                  { id: 5, name: "വിനോദ്", symbol: "🏅" },
+                  { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
@@ -268,7 +285,7 @@ export const evmData = {
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
-                  { id: 8, name: "സുമ", symbol: "🌻" },
+                  { id: 8, name: "", symbol: "" },
                   { id: 9, name: "", symbol: "" },
                   { id: 10, name: "", symbol: "" }
                 ]
@@ -285,7 +302,7 @@ export const evmData = {
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
-                  { id: 9, name: "രാജേഷ്", symbol: "🔱" },
+                  { id: 9, name: "", symbol: "" },
                   { id: 10, name: "", symbol: "" }
                 ]
               }
@@ -306,7 +323,7 @@ export const evmData = {
                 level: "Ward",
                 title: "Vote For ലീന",
                 candidates: [
-                  { id: 1, name: "ലീന", symbol: "🌹" },
+                  { id: 1, name: "", symbol: "" },
                   { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
@@ -327,7 +344,7 @@ export const evmData = {
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
-                  { id: 6, name: "സജിത്", symbol: "🎪" },
+                  { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
                   { id: 9, name: "", symbol: "" },
@@ -339,7 +356,7 @@ export const evmData = {
                 title: "Vote For അനു",
                 candidates: [
                   { id: 1, name: "", symbol: "" },
-                  { id: 2, name: "അനു", symbol: "🌼" },
+                  { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
@@ -369,7 +386,7 @@ export const evmData = {
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
-                  { id: 9, name: "ബിജു", symbol: "🎨" },
+                  { id: 9, name: "", symbol: "" },
                   { id: 10, name: "", symbol: "" }
                 ]
               },
@@ -379,7 +396,7 @@ export const evmData = {
                 candidates: [
                   { id: 1, name: "", symbol: "" },
                   { id: 2, name: "", symbol: "" },
-                  { id: 3, name: "രേണു", symbol: "🌷" },
+                  { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
@@ -399,7 +416,7 @@ export const evmData = {
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
-                  { id: 7, name: "ഹരി", symbol: "🎭" },
+                  { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
                   { id: 9, name: "", symbol: "" },
                   { id: 10, name: "", symbol: "" }
@@ -419,7 +436,7 @@ export const evmData = {
                   { id: 1, name: "", symbol: "" },
                   { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
-                  { id: 4, name: "മായ", symbol: "🦚" },
+                  { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
@@ -441,7 +458,7 @@ export const evmData = {
                   { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
                   { id: 9, name: "", symbol: "" },
-                  { id: 10, name: "ജോയി", symbol: "🎸" }
+                  { id: 10, name: "", symbol: "" }
                 ]
               },
               District: {
@@ -452,13 +469,366 @@ export const evmData = {
                   { id: 2, name: "", symbol: "" },
                   { id: 3, name: "", symbol: "" },
                   { id: 4, name: "", symbol: "" },
-                  { id: 5, name: "നിഷ", symbol: "🌈" },
+                  { id: 5, name: "", symbol: "" },
                   { id: 6, name: "", symbol: "" },
                   { id: 7, name: "", symbol: "" },
                   { id: 8, name: "", symbol: "" },
                   { id: 9, name: "", symbol: "" },
                   { id: 10, name: "", symbol: "" }
                 ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      blockName: "Karadka",
+      blockCode: "Karadka",
+      panchayats: [
+        {
+          id: 4,
+          name: "Kuttikkol",
+          wards: [
+            {
+              wardNo: 1,
+              name: "Kuttikkol",
+              ballotUnit: "401",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 2,
+              name: "Angadimogaru",
+              ballotUnit: "402",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 3,
+              name: "Kumbdaje South",
+              ballotUnit: "403",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 4,
+              name: "Kumbdaje North",
+              ballotUnit: "404",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 5,
+              name: "Mundathaje",
+              ballotUnit: "405",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 6,
+              name: "Kodoth",
+              ballotUnit: "406",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 7,
+              name: "Puchimukha",
+              ballotUnit: "407",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 8,
+              name: "Arampoyil",
+              ballotUnit: "408",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 9,
+              name: "Murikkoli",
+              ballotUnit: "409",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: [
+                  { id: 1, name: "ഗോപാലൻ കുമ്പച്ചിമൂല", symbol: "🖐️", image: "/candidates/gopalan.jpg", symbolImage: "/symbols/hand.png" },
+                  ...Array(9).fill(null).map((_, i) => ({ id: i + 2, name: "", symbol: "" }))
+                ]
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: [
+                  { id: 1, name: "", symbol: "" },
+                  { id: 2, name: "കെ ബലരാമന്‍ നമ്പ്യാർ", symbol: "🖐️", image: "/candidates/balaraman.jpg", symbolImage: "/symbols/hand.png" },
+                  ...Array(8).fill(null).map((_, i) => ({ id: i + 3, name: "", symbol: "" }))
+                ]
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: [
+                  { id: 1, name: "", symbol: "" },
+                  { id: 2, name: "കൂക്കൾ ബാലകൃഷ്ണൻ", symbol: "", image: "/candidates/balakrishnan.jpg", symbolImage: "/symbols/shovel.png" },
+                  ...Array(8).fill(null).map((_, i) => ({ id: i + 3, name: "", symbol: "" }))
+                ]
+              }
+            },
+            {
+              wardNo: 10,
+              name: "Chappuram",
+              ballotUnit: "410",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 11,
+              name: "Vidhyanagar",
+              ballotUnit: "411",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 12,
+              name: "Badiyadkka",
+              ballotUnit: "412",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 13,
+              name: "Kakkottur",
+              ballotUnit: "413",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 14,
+              name: "Kudlu",
+              ballotUnit: "414",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
+              }
+            },
+            {
+              wardNo: 15,
+              name: "Karivedakam",
+              ballotUnit: "415",
+              blockDivision: "Karadka",
+              districtDivision: "Kasaragod",
+              Ward: {
+                level: "Ward",
+                title: "Vote For Ward Candidate",
+                candidates: getSampleCandidates()
+              },
+              Block: {
+                level: "Block",
+                title: "Vote For Block Candidate",
+                candidates: getSampleCandidates()
+              },
+              District: {
+                level: "District",
+                title: "Vote For District Candidate",
+                candidates: getSampleCandidates()
               }
             }
           ]
