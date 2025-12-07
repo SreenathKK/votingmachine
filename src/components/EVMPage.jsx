@@ -109,8 +109,8 @@ const EVMPage = () => {
 
   const handleShare = async () => {
     const shareData = {
-      title: 'EVM Voting System',
-      text: 'Check out this EVM Voting System Demo!',
+      title: 'Vote For UDF',
+      text: 'വോട്ട് മനുഷ്യന്റെ സ്വപ്നങ്ങളും ഭാവിയും എഴുതുന്ന ഏറ്റവും ചെറിയ രേഖയാണ്. വോട്ട് മനുഷ്യന്റെ സ്വപ്നങ്ങളും ഭാവിയും എഴുതുന്ന ഏറ്റവും ചെറിയ രേഖയാണ്.',
       url: window.location.href
     };
 
@@ -134,7 +134,7 @@ const EVMPage = () => {
 
   const ShareModal = () => {
     const currentUrl = encodeURIComponent(window.location.href);
-    const text = encodeURIComponent('Check out this EVM Voting System Demo!');
+    const text = encodeURIComponent('വോട്ട് മനുഷ്യന്റെ സ്വപ്നങ്ങളും ഭാവിയും എഴുതുന്ന ഏറ്റവും ചെറിയ രേഖയാണ്. വോട്ട് മനുഷ്യന്റെ സ്വപ്നങ്ങളും ഭാവിയും എഴുതുന്ന ഏറ്റവും ചെറിയ രേഖയാണ്. അത് ചെറുതായിരിക്കാം… പക്ഷേ അതിന്റെ ശക്തി ഒരു തലമുറയുടെ ദിശ മാറ്റാൻ കഴിയും.');
 
     const shareLinks = [
       {
@@ -619,12 +619,12 @@ const EVMPage = () => {
                 }}>
                   {/* Row Number */}
                   <td style={{
-                    width: window.innerWidth <= 480 ? '50px' : '60px',
-                    padding: window.innerWidth <= 480 ? '12px 8px' : '16px 12px',
+                    width: window.innerWidth <= 480 ? '40px' : '60px', // Reduced width
+                    padding: window.innerWidth <= 480 ? '8px 4px' : '16px 12px', // Reduced padding
                     borderRight: '6px solid #E5E7EB',
                     textAlign: 'center',
                     verticalAlign: 'middle',
-                    fontSize: window.innerWidth <= 480 ? '16px' : '18px',
+                    fontSize: window.innerWidth <= 480 ? '14px' : '18px', // Reduced font size
                     color: '#374151',
                     fontWeight: 'bold'
                   }}>
@@ -633,7 +633,7 @@ const EVMPage = () => {
 
                   {/* Candidate Name and Symbol */}
                   <td style={{
-                    padding: window.innerWidth <= 480 ? '12px' : '16px',
+                    padding: window.innerWidth <= 480 ? '8px 4px' : '16px', // Reduced padding
                     borderRight: '6px solid #E5E7EB',
                     verticalAlign: 'middle'
                   }}>
@@ -644,7 +644,7 @@ const EVMPage = () => {
                       width: '100%'
                     }}>
                       <div style={{
-                        fontSize: window.innerWidth <= 480 ? '16px' : '18px',
+                        fontSize: window.innerWidth <= 480 ? '13px' : '18px', // Reduced font size
                         color: '#111827',
                         fontWeight: candidate.name ? '600' : 'normal',
                         flex: 1,
@@ -678,8 +678,8 @@ const EVMPage = () => {
 
                   {/* Red Bulb and Vote Button in Same Column */}
                   <td style={{
-                    width: window.innerWidth <= 480 ? '90px' : '100px',
-                    padding: window.innerWidth <= 480 ? '12px' : '16px',
+                    width: window.innerWidth <= 480 ? '70px' : '100px', // Reduced width
+                    padding: window.innerWidth <= 480 ? '8px' : '16px', // Reduced padding
                     textAlign: 'center',
                     verticalAlign: 'middle'
                   }}>
