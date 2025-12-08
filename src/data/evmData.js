@@ -2557,7 +2557,7 @@ export const evmData = {
                     name: "മഞ്ജു പ്രദീപ് ",
                     symbol: "cpim.jpg",
                     successSymbol: "cpim-success.png",
-                    candidateImgName: "vipinabp.jpeg",
+                    candidateImgName: "manjupradeep.jpeg",
                   },
                   {
                     id: 2,
