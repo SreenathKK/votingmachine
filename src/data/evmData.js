@@ -2749,7 +2749,7 @@ export const evmData = {
                     name: "പി കെ സിന്ധു ",
                     symbol: "cpim.jpeg",
                     successSymbol: "cpim-success.png",
-                    candidateImgName: "vipinabp.jpeg",
+                    candidateImgName: "pksindhu.jpeg",
                   },
                   { id: 4, name: "", symbol: "" },
                   { id: 5, name: "", symbol: "" },
