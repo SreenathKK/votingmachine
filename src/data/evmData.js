@@ -729,17 +729,29 @@ export const evmData = {
               Ward: {
                 level: "Ward",
                 title: "Vote For Ward Candidate",
-                candidates: getSampleCandidates()
+                candidates: [
+                  { id: 1, name: "", symbol: "" },
+                  { id: 2, name: "", symbol: "" },
+                  { id: 3, name: "ജോസ് പാറത്തട്ടേൽ", symbol: "🖐️", image: "/candidates/jose.jpg", symbolImage: "/symbols/hand.png" },
+                  ...Array(7).fill(null).map((_, i) => ({ id: i + 4, name: "", symbol: "" }))
+                ]
               },
               Block: {
                 level: "Block",
                 title: "Vote For Block Candidate",
-                candidates: getSampleCandidates()
+                candidates: [
+                  { id: 1, name: "", symbol: "" },
+                  { id: 2, name: "കെ ബലരാമന്‍ നമ്പ്യാർ", symbol: "🖐️", image: "/candidates/balaraman.jpg", symbolImage: "/symbols/hand.png" },
+                  ...Array(8).fill(null).map((_, i) => ({ id: i + 3, name: "", symbol: "" }))
+                ]
               },
               District: {
                 level: "District",
                 title: "Vote For District Candidate",
-                candidates: getSampleCandidates()
+                candidates: [
+                  { id: 1, name: "കൂക്കൾ ബാലകൃഷ്ണൻ", symbol: "", image: "/candidates/balakrishnan.jpg", symbolImage: "/symbols/shovel.png" },
+                  ...Array(9).fill(null).map((_, i) => ({ id: i + 3, name: "", symbol: "" }))
+                ]
               }
             },
             {
