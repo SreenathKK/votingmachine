@@ -26,9 +26,7 @@ const EVMPage = () => {
 
   useEffect(() => {
     // Initialize GA4
-    if (GA_MEASUREMENT_ID !== 'G-TD4J764SCK') {
-      ReactGA.initialize(GA_MEASUREMENT_ID);
-    }
+    ReactGA.initialize(GA_MEASUREMENT_ID);
 
     const pId = panchayatId || '1';
     const wNo = wardNo || '1';
@@ -38,9 +36,7 @@ const EVMPage = () => {
     updateData('Ward', pId, wNo);
 
     // Track Page View
-    if (GA_MEASUREMENT_ID !== 'G-TD4J764SCK') {
-      ReactGA.send({ hitType: "pageview", page: window.location.hash });
-    }
+    ReactGA.send({ hitType: "pageview", page: window.location.hash });
   }, [panchayatId, wardNo]);
 
   const updateData = (level, pId = panchayatId || '1', wNo = wardNo || '1') => {
@@ -126,13 +122,11 @@ const EVMPage = () => {
 
   const handleShare = async () => {
     // Track Share Click
-    if (GA_MEASUREMENT_ID !== 'G-TD4J764SCK') {
-      ReactGA.event({
-        category: "User Interaction",
-        action: "share_click",
-        label: displayCandidate?.name || "General Share"
-      });
-    }
+    ReactGA.event({
+      category: "User Interaction",
+      action: "share_click",
+      label: displayCandidate?.name || "General Share"
+    });
 
     const shareData = {
       title: 'Vote For UDF',
@@ -731,13 +725,11 @@ const EVMPage = () => {
                         onClick={candidate.name ? () => {
                           handleVote(candidate.id);
                           // Track Vote
-                          if (GA_MEASUREMENT_ID !== 'G-TD4J764SCK') {
-                            ReactGA.event({
-                              category: "Voting",
-                              action: "vote_cast",
-                              label: candidate.name
-                            });
-                          }
+                          ReactGA.event({
+                            category: "Voting",
+                            action: "vote_cast",
+                            label: candidate.name
+                          });
                         } : undefined}
                         style={{
                           backgroundColor: '#1E40AF',
