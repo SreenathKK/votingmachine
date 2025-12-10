@@ -668,7 +668,7 @@ export const evmData = {
             },
             {
               wardNo: 9,
-              name: "Murikkoli",
+              name: "Veetiyadi",
               ballotUnit: "409",
               blockDivision: "Karadka",
               districtDivision: "Kasaragod",
@@ -700,14 +700,19 @@ export const evmData = {
             },
             {
               wardNo: 10,
-              name: "Chappuram",
+              name: "Eniyadi",
               ballotUnit: "410",
               blockDivision: "Karadka",
               districtDivision: "Kasaragod",
               Ward: {
                 level: "Ward",
                 title: "Vote For Ward Candidate",
-                candidates: getSampleCandidates()
+                candidates: [
+                  { id: 1, name: "", symbol: "" },
+                  { id: 2, name: "", symbol: "" },
+                  { id: 3, name: "ശോഭന ബാലചന്ദ്രൻ", symbol: "🖐️", image: "/candidates/shobana.jpg", symbolImage: "/symbols/hand.png" },
+                  ...Array(7).fill(null).map((_, i) => ({ id: i + 4, name: "", symbol: "" }))
+                ]
               },
               Block: {
                 level: "Block",
@@ -722,7 +727,7 @@ export const evmData = {
             },
             {
               wardNo: 11,
-              name: "Vidhyanagar",
+              name: "Choorithodu",
               ballotUnit: "411",
               blockDivision: "Karadka",
               districtDivision: "Kasaragod",
@@ -756,24 +761,27 @@ export const evmData = {
             },
             {
               wardNo: 12,
-              name: "Badiyadkka",
+              name: "Karivedakam",
               ballotUnit: "412",
               blockDivision: "Karadka",
               districtDivision: "Kasaragod",
               Ward: {
                 level: "Ward",
                 title: "Vote For Ward Candidate",
-                candidates: getSampleCandidates()
+                candidates: [
+                  { id: 1, name: "മോളി ആനിമൂട്ടിൽ", symbol: "🖐️", image: "/candidates/moly.jpg", symbolImage: "/symbols/hand.png" },
+                  ...Array(9).fill(null).map((_, i) => ({ id: i + 2, name: "", symbol: "" }))
+                ]
               },
               Block: {
                 level: "Block",
                 title: "Vote For Block Candidate",
-                candidates: getSampleCandidates()
+                candidates: Array(10).fill(null).map((_, i) => ({ id: i + 1, name: "", symbol: "" }))
               },
               District: {
                 level: "District",
                 title: "Vote For District Candidate",
-                candidates: getSampleCandidates()
+                candidates: Array(10).fill(null).map((_, i) => ({ id: i + 1, name: "", symbol: "" }))
               }
             },
             {

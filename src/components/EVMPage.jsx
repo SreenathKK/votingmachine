@@ -3,6 +3,10 @@ import { useParams } from 'react-router-dom';
 import { getWardData, getLevelTheme } from '../data/evmData';
 import { Share2, X, Copy, Check, Facebook, Twitter, Send, MessageCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
+import ReactGA from 'react-ga4';
+
+// TODO: Replace with your actual Measurement ID (G-XXXXXXXXXX)
+const GA_MEASUREMENT_ID = 'G-TD4J764SCK';
 
 const EVMPage = () => {
   const { panchayatId, wardParam } = useParams();
@@ -21,12 +25,22 @@ const EVMPage = () => {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
+    // Initialize GA4
+    if (GA_MEASUREMENT_ID !== 'G-TD4J764SCK') {
+      ReactGA.initialize(GA_MEASUREMENT_ID);
+    }
+
     const pId = panchayatId || '1';
     const wNo = wardNo || '1';
     setCurrentLocationId(`${pId}/${wNo}`);
     
     setCurrentLevel('Ward');
     updateData('Ward', pId, wNo);
+
+    // Track Page View
+    if (GA_MEASUREMENT_ID !== 'G-TD4J764SCK') {
+      ReactGA.send({ hitType: "pageview", page: window.location.hash });
+    }
   }, [panchayatId, wardNo]);
 
   const updateData = (level, pId = panchayatId || '1', wNo = wardNo || '1') => {
@@ -111,6 +125,15 @@ const EVMPage = () => {
   const displayCandidate = locationData?.candidates.find(c => c.name) || locationData?.candidates[0];
 
   const handleShare = async () => {
+    // Track Share Click
+    if (GA_MEASUREMENT_ID !== 'G-TD4J764SCK') {
+      ReactGA.event({
+        category: "User Interaction",
+        action: "share_click",
+        label: displayCandidate?.name || "General Share"
+      });
+    }
+
     const shareData = {
       title: 'Vote For UDF',
       text: `Vote for ${displayCandidate?.name || 'UDF'}`,
@@ -705,7 +728,17 @@ const EVMPage = () => {
 
                       {/* Vote Button */}
                       <button
-                        onClick={candidate.name ? () => handleVote(candidate.id) : undefined}
+                        onClick={candidate.name ? () => {
+                          handleVote(candidate.id);
+                          // Track Vote
+                          if (GA_MEASUREMENT_ID !== 'G-TD4J764SCK') {
+                            ReactGA.event({
+                              category: "Voting",
+                              action: "vote_cast",
+                              label: candidate.name
+                            });
+                          }
+                        } : undefined}
                         style={{
                           backgroundColor: '#1E40AF',
                           border: 'none',
